@@ -1,12 +1,27 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/downloader">Downloader</router-link> -->
+      <!-- <router-link :to ="Profile">showMessage</router-link> | -->
+      <!--<router-link :to ="/user/+userId">User</router-link> -->
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+ const file = {path: '/about',query : {news: ['今天有爆炸','明天没有','后天就nm离谱'], name : 'Yi Yanglu', message: ['break today','tomorrow nothing','and fuck']} }
+
+export default {
+  name: 'App',
+  data() {
+     return {
+       userId: 'Yi Yanglu',
+       Profile: file
+     }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

@@ -15,7 +15,7 @@ export default {
   methods:{
     //下载文件
     downLoad: function (val) {
-        window.open("http://localhost:8082/test/download?fileName=" + val, '_blank')
+        window.open("http://47.100.63.148:8082/test/download?fileName=" + val, '_blank')
     }
   }
 }

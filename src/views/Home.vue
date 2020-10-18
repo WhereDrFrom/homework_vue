@@ -1,10 +1,11 @@
 <template>
  <el-upload
  :before-upload="beforeAvatarUpload"
+ :on-success="afterUpload"
   class="upload-demo"
   drag
   accept=".doc,.docx"
-  action="http://localhost:8082/test/upload"
+  action="http://47.100.63.148:8082/test/upload"
   multiple>
   <i class="el-icon-upload"></i>
   <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -38,6 +39,10 @@ export default {
           this.$message.error('文件名字错误');
         }
         return isLt5M && flag2;
+      },afterUpload(response,file){
+        if(response == "success"){
+          this.$message.success('上传成功')
+        }
       }
   }
 }
